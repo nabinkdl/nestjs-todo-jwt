@@ -31,18 +31,24 @@ export class AuthService {
     };
 }
 
-  async login(dto: LoginDto) {
-    const user = await this.prisma.user.findUnique({
-      where: { email: dto.email },
-    });
+ async login(dto: LoginDto) {
+  // 1. Find user by email in database
+  const user = await this.prisma.user.findUnique({
+    where: { email: dto.email },
+  });
 
-    if (!user) throw new UnauthorizedException('Invalid credentials');
+  // 2. If user doesn't exist, reject login
+  if (!user) throw new UnauthorizedException('Invalid credentials');
 
-    const match = await bcrypt.compare(dto.password, user.password);
-    if (!match) throw new UnauthorizedException('Invalid credentials');
+  // 3. Compare plain password with hashed password in DB
+  const match = await bcrypt.compare(dto.password, user.password);
 
-    return this.signToken(user.id, user.email);
-  }
+  // 4. If password doesn't match, reject login
+  if (!match) throw new UnauthorizedException('Invalid credentials');
+
+  // 5. If everything is valid, generate JWT token and return it
+  return this.signToken(user.id, user.email);
+}
 
   private signToken(userId: string, email: string) {
     return {
