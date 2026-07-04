@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Prisma generated files (optional but common)
+node_modules/.prisma/
+prisma/migrations/dev/
+
+# Coverage (if you add tests later)
+coverage/
+
+# NestJS cache
+.nest/
+
+# Temporary files
+tmp/
+temp/
