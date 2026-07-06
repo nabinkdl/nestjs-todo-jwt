@@ -94,12 +94,4 @@ Response returned safely
 
 ---
 
-## Possible Next Upgrades
 
-* Refresh token system 🔁
-* Role-based auth (Admin/User)
-* Swagger docs 📄
-* Soft delete todos
-* Pagination + filtering
-* Clean architecture (DDD style)
-* Docker setup
