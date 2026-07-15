@@ -8,6 +8,10 @@ let app;
 async function getApp() {
   if (!app) {
     app = await NestFactory.create(AppModule);
+    app.enableCors({
+      origin: process.env.CORS_ORIGIN || true,
+      credentials: true,
+    });
     app.useGlobalPipes(
       new ValidationPipe({
         whitelist: true,
