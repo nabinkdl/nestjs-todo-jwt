@@ -1,3 +1,4 @@
+
 # 🚀 NestJS + Prisma Todo App with JWT Auth
 
 A complete production-style **NestJS + Prisma Todo app with Auth (JWT)**.
@@ -13,6 +14,8 @@ A complete production-style **NestJS + Prisma Todo app with Auth (JWT)**.
 * bcrypt password hashing
 
 ---
+<img width="1390" height="852" alt="Screenshot 2026-07-15 at 11 17 57 am" src="https://github.com/user-attachments/assets/7dbb2ef8-1063-44c2-9f29-86e7d6354c5e" />
+<img width="1388" height="659" alt="Screenshot 2026-07-15 at 11 21 19 am" src="https://github.com/user-attachments/assets/391debca-87c1-4c26-8e11-5b4cf22a5801" />
 
 ## Project Structure
 
