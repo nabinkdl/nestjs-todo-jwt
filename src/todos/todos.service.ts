@@ -21,10 +21,11 @@ export class TodosService {
     });
   }
 
-  toggle(id: string) {
+  async toggle(id: string) {
+    const todo = await this.prisma.todo.findUniqueOrThrow({ where: { id } });
     return this.prisma.todo.update({
       where: { id },
-      data: { done: true },
+      data: { done: !todo.done },
     });
   }
 
